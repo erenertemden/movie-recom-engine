@@ -1,32 +1,29 @@
 movie-recom-engine/
 │
 ├── app/
-│   ├── __init__.py
-│   ├── main.py                   # FastAPI uygulaması başlatıcısı
+│   ├── main.py                   # FastAPI
 │
 │   ├── db/
-│   │   ├── __init__.py
-│   │   ├── models.py             # SQLAlchemy veritabanı modelleri (Conversation, Message)
-│   │   ├── database.py           # DB bağlantısı & session yönetimi
-│   │   └── migrate.py            # Tabloları oluşturmak için script
+│   │   ├── models.py             # SQLAlchemy models
+│   │   ├── database.py           # db bağlantısı - session
+│   │   └── migrate.py            # tablolar için script
 │
 │   ├── chat/
-│   │   ├── __init__.py
-│   │   ├── api.py                # Chat API endpointleri
-│   │   ├── log_utils.py          # DB’ye loglama yardımcıları
-│   │   └── llm_engine.py         # OpenAI/Ollama üzerinden cevap üretme
+│   │   ├── api.py                # endpointlefr
+│   │   ├── log_utils.py          # db logs yardımcıları
+│   │   └── llm_engine.py         # llm üzerinden cevap
 │
 │   ├── embeddings/
-│   │   ├── generate_embeddings.py # Belge içeriklerinden embedding üretimi
-│   │   ├── engine.py              # FAISS sorgulama ve yakınlık hesaplama
-│   │   ├── textual_rep.py         # Metni temizleme/parçalama
-│   │   └── ollama_check.py        # Ollama hazır mı kontrol scripti
+│   │   ├── generate_embeddings.py 
+│   │   ├── engine.py              
+│   │   ├── textual_rep.py         
+│   │   └── ollama_check.py        
 │
 │   └── utils/
-│       └── token_utils.py         # Cookie-token üretme, doğrulama (UUID vs)
+│       └── token_utils.py         # cookie-token doğrulama (UUID)
 │
 ├── app/streamlit_app/
-│   └── chat_ui.py                # Streamlit kullanıcı arayüzü (chat ekranı)
+│   └── chat_ui.py                # streamlit ui tarafı
 │
-├── requirements.txt              # Gerekli paketler
-└── README.md                     # Proje dökümantasyonu
+├── requirements.txt              
+└── README.md                     
