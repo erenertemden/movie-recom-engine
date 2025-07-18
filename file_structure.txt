@@ -1,0 +1,32 @@
+movie-recom-engine/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py                   # FastAPI uygulaması başlatıcısı
+│
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── models.py             # SQLAlchemy veritabanı modelleri (Conversation, Message)
+│   │   ├── database.py           # DB bağlantısı & session yönetimi
+│   │   └── migrate.py            # Tabloları oluşturmak için script
+│
+│   ├── chat/
+│   │   ├── __init__.py
+│   │   ├── api.py                # Chat API endpointleri
+│   │   ├── log_utils.py          # DB’ye loglama yardımcıları
+│   │   └── llm_engine.py         # OpenAI/Ollama üzerinden cevap üretme
+│
+│   ├── embeddings/
+│   │   ├── generate_embeddings.py # Belge içeriklerinden embedding üretimi
+│   │   ├── engine.py              # FAISS sorgulama ve yakınlık hesaplama
+│   │   ├── textual_rep.py         # Metni temizleme/parçalama
+│   │   └── ollama_check.py        # Ollama hazır mı kontrol scripti
+│
+│   └── utils/
+│       └── token_utils.py         # Cookie-token üretme, doğrulama (UUID vs)
+│
+├── app/streamlit_app/
+│   └── chat_ui.py                # Streamlit kullanıcı arayüzü (chat ekranı)
+│
+├── requirements.txt              # Gerekli paketler
+└── README.md                     # Proje dökümantasyonu
